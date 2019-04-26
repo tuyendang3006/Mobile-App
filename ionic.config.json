@@ -7,28 +7,23 @@
   "proxies": [
     {
       "path": "/api/list",
-       "proxyUrl": "https://awesome-todolist.herokuapp.com/api/list"
-      //"proxyUrl": "https://localhost:8801/api/list"
+      "proxyUrl": "http://localhost:8801/api/list"
     },
     {
       "path": "/api/lists",
-      "proxyUrl": "https://awesome-todolist.herokuapp.com/api/lists"
-      //"proxyUrl": "https://localhost:8801/api/lists"
+      "proxyUrl": "http://localhost:8801/api/lists"
     },
     {
       "path": "/login",
-      "proxyUrl": "https://awesome-todolist.herokuapp.com/login"
-      //"proxyUrl": "https://localhost:8801/login"
+      "proxyUrl": "http://localhost:8801/login"
     },
     {
       "path": "/logout",
-      "proxyUrl": "https://awesome-todolist.herokuapp.com/logout"
-      //"proxyUrl": "https://localhost:8801/logout"
+      "proxyUrl": "http://localhost:8801/logout"
     },
     {
       "path": "/signup",
-      "proxyUrl": "https://awesome-todolist.herokuapp.com/signup"
-      //"proxyUrl": "https://localhost:8801/signup"
+      "proxyUrl": "http://localhost:8801/signup"
     }
   ]
 }
