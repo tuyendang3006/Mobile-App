@@ -1,0 +1,76 @@
+<ion-view view-title="Todos" name="todo-view" ng-controller="TodoCtrl">
+  <ion-side-menus>
+    <!-- Center content -->
+    <ion-side-menu-content>
+      <ion-header-bar class="bar-dark">
+        <button class="button button-icon" ng-click="toggleProjects()">
+          <i class="icon ion-navicon"></i>
+        </button>
+        <h1 class="title">{{ activeProject }}</h1>
+        <!-- New Task button-->
+        <button class="button button-icon" ng-click="newTask()">
+          <i class="icon ion-compose"></i>
+        </button>
+      </ion-header-bar>
+      <ion-content scroll="false">
+        <ion-list>
+          <ion-item class="item item-button-right" ng-repeat="task in filteredList">
+            {{ task.todo }}
+            <button class="button button-icon" ng-click="deleteTask(task._id)">
+              <i class="icon ion-trash-b"></i>
+            </button>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-side-menu-content>
+
+    <!-- Left menu -->
+    <ion-side-menu side="left">
+      <ion-header-bar class="bar-dark">
+        <h1 class="title">Listes</h1>
+        <button class="button button-icon ion-plus" ng-click="newProject()"></button>
+      </ion-header-bar>
+      <ion-content scroll="false">
+        <ion-list>
+          <ion-item ng-repeat="project in projects" ng-click="selectProject(project)" 
+            ng-class="{active: activeProject == project}" class="item item-icon-right">
+            {{ project }}
+            <i class="icon ion-ios-arrow-forward"></i>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+
+      <ion-footer-bar class="bar-assertive" ng-click="disconnect()">
+        <h1 class="title">Se déconnecter</h1>
+      </ion-footer-bar>
+    </ion-side-menu>
+  </ion-side-menus>
+  <script id="new-task.html" type="text/ng-template">
+
+    <div class="modal">
+
+      <!-- Modal header bar -->
+      <ion-header-bar class="bar-secondary">
+        <h1 class="title">Nouvelle tâche</h1>
+        <button class="button button-clear button-positive" ng-click="closeNewTask()">Annuler</button>
+      </ion-header-bar>
+
+      <!-- Modal content area -->
+      <ion-content>
+
+        <form ng-submit="createTask(task)">
+          <div class="list">
+            <label class="item item-input">
+              <input type="text" placeholder="Ajouter une tâche" ng-model="task.todo">
+            </label>
+          </div>
+          <div class="padding">
+            <button type="submit" class="button button-block button-positive">Ajouter</button>
+          </div>
+        </form>
+
+      </ion-content>
+
+    </div>
+  </script>
+</ion-view>

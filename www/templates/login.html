@@ -1,0 +1,18 @@
+<ion-view view-title="Login" name="login-view" ng-controller="LoginCtrl">
+  <ion-header-bar>
+    <h1 class="title">Connexion</h1>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="Identifiant" ng-model="credentials.username"/>
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Mot de passe" ng-model="credentials.password"/>
+      </label>
+    </div>
+    Pas de compte ?
+    <span class="positive" ng-click="signup()">S'inscrire</span>
+    <button type="submit" class="button button-block button-calm" ng-click="login()"> Login </button>
+  </ion-content>
+</ion-view>
